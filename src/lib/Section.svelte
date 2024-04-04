@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { twMerge } from 'tailwind-merge';
 
 	export let id = '';
+	export let className = '';
 	let section: HTMLElement;
 	let isVisible = false;
 
@@ -31,9 +33,11 @@
 <section
 	bind:this={section}
 	{id}
-	class="flex flex-col items-center w-full transform translate-y-5 my-20 md:my-30 xl:my-40 px-20 md:px-40 xl:px-64 text-black {isVisible
-		? 'opacity-100 animate-fadeIn'
-		: 'opacity-0'}"
+	class={twMerge(
+		'flex flex-col items-center w-full transform translate-y-5 my-20 md:my-30 xl:my-40 px-20 md:px-40 xl:px-64',
+		isVisible ? 'opacity-100 animate-fadeIn' : 'opacity-0',
+		className
+	)}
 >
 	<slot />
 </section>
