@@ -66,10 +66,9 @@
 <Section id="mission">
 	<Header>Our Mission</Header>
 	<Paragraph
-		>We don't practice liberty activism,<br />
-		but we empower the ones who do.<br />
+		>We don't practice liberty activism, but we empower the ones who do.<br />
 		Teaching free people how to be more powerful and self-reliant as individuals,<br />
-		creating sustainable foundations for free communities that can resist tyranny –<br />
+		and creating sustainable foundations for free communities that can resist tyranny –<br />
 		this is the mission of the Thriving Individuals.</Paragraph
 	>
 </Section>
