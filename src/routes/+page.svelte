@@ -3,6 +3,8 @@
 	import Section from '$lib/Section.svelte';
 	import Header from '$lib/Header.svelte';
 	import Paragraph from '$lib/Paragraph.svelte';
+	import List from '../lib/List.svelte';
+	import Link from '../lib/Link.svelte';
 
 	let name = '';
 	let email = '';
@@ -19,7 +21,7 @@
 
 <Section id="home">
 	<img src="/logo.png" alt="Thriving Individuals Logo" class="w-3/4 mt-2.5 mb-5" />
-	<Header>Join us to grow with us.</Header>
+	<Paragraph type="xl">Join us to grow with us.</Paragraph>
 	<form
 		class="flex flex-col space-y-8 w-3/5 max-w-md my-10"
 		on:submit|preventDefault={handleSubmit}
@@ -28,10 +30,12 @@
 		<Input type="email" bind:value={email} placeholder="Email *" required />
 
 		<div class="checkbox-container">
-			<label class="flex items-center text-lg">
-				<input type="checkbox" bind:checked={accepted} class="w-5 h-5 mr-4" />
-				Accept <a href="/terms-and-conditions">Terms & Conditions</a>
-			</label>
+      <Paragraph>
+        <label class="flex items-center">
+          <input type="checkbox" bind:checked={accepted} class="w-5 h-5 mr-4" />
+          Accept&nbsp;<Link href="/terms-and-conditions">Terms & Conditions</Link>
+        </label>
+      </Paragraph>
 		</div>
 
 		<button
@@ -56,14 +60,14 @@
 		>We embrace all aspects of human flourishing and the human pursuit of virtue, growth, and
 		personal excellence.</Paragraph
 	>
-	<Paragraph>For more details, see our <a href="#areas">areas of interest</a>.</Paragraph>
+	<Paragraph>For more details, see our <Link href="/thriving-individuals-foundation-statute.pdf">statute</Link>.</Paragraph>
 </Section>
 
 <Section id="mission">
 	<Header>Our Mission</Header>
 	<Paragraph
 		>We don't practice liberty activism,<br />
-		but we strengthen the ones who do.<br />
+		but we empower the ones who do.<br />
 		Teaching free people how to be more powerful and self-reliant as individuals,<br />
 		creating sustainable foundations for free communities that can resist tyranny –<br />
 		this is the mission of the Thriving Individuals.</Paragraph
@@ -77,7 +81,7 @@
 
 <Section id="values">
 	<Header>Our Values — FREE</Header>
-	<ol>
+	<List>
 		<li>
 			<b>Freedom</b> — We respect freedom as a fundamental aspect of human nature. We strive to live
 			and act as free men, both internally and externally, making the world more free one person at a
@@ -97,7 +101,7 @@
 			<b>Empowerment</b> — We generously share the gift of our growth and freedom with others, who are
 			able and willing to walk a similar path of self-improvement and personal independence.
 		</li>
-	</ol>
+	</List>
 </Section>
 
 <Section id="areas">
@@ -107,7 +111,7 @@
 		Individuals. It is meant to contain essential skills necessary to be a free & self-reliant man
 		in the modern era.</Paragraph
 	>
-	<ol>
+	<List>
 		<li>
 			<b>Inner Freedom</b> — mental health, dealing with stress & trauma, emotional intelligence, freedom
 			from addictions, attachments, propaganda, developing virtues, living with truth and meaning.
@@ -140,11 +144,6 @@
 			<b>Material Independence</b> — survival skills, prepping, sustainability, material resilience
 		</li>
 		<li><b>Free Movement</b> — relocation, nomading, residency optimization, free cities</li>
-	</ol>
-	<Paragraph>Interested? <a href="#home">Join us today.</a></Paragraph>
-</Section>
-
-<Section id="team">
-	<Header>Our Team</Header>
-	<Paragraph>Details about team members...</Paragraph>
+	</List>
+	<Paragraph className="mt-4">Interested? <Link href="#home">Join us today.</Link></Paragraph>
 </Section>

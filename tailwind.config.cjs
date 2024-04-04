@@ -31,6 +31,14 @@ const config = {
       },
       fontFamily: {
         'montserrat': ['Montserrat', 'sans-serif'], // Add Montserrat. The 'sans-serif' is a fallback.
+      },
+      colors: {
+        blue: {
+          regular: '#082dfd',
+          darker: '#0820a6',
+        },
+        black: '#02022C',
+        gold: '#fdd609',
       }
     }
 	},

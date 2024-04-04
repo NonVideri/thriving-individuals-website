@@ -24,8 +24,8 @@
 	class="z-10 fixed top-0 left-0 right-0 flex justify-around transition-transform duration-300 ease-in-out {!showMenu &&
 		'transform -translate-y-full'}"
 >
-	<NavBarLink href="#home">Join Us</NavBarLink>
-	<NavBarLink href="#about">About</NavBarLink>
-	<NavBarLink href="#team">Our Team</NavBarLink>
+	<NavBarLink href="/">Join Us</NavBarLink>
+	<NavBarLink href="/about">About</NavBarLink>
+	<NavBarLink href="/team">Our Team</NavBarLink>
 	<NavBarLink href="https://forum.thrivingindividuals.org">Forum</NavBarLink>
 </nav>

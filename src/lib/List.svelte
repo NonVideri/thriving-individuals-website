@@ -1,0 +1,1 @@
+<ol class="list-decimal my-2"><slot /></ol>
