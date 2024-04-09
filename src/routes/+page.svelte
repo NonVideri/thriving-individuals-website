@@ -106,8 +106,8 @@
 	}
 </script>
 
-<Section id="home">
-	<img src="/logo.png" alt="Thriving Individuals Logo" class="w-3/4 mt-2.5 mb-5" />
+<img id="home" src="/logo.png" alt="Thriving Individuals Logo" class="w-3/4 mt-12 md:mt-16 lg:mt-20" />
+<Section className="mt-0 md:mt-0 xl:mt-0">
 	<Paragraph type="xl">Join us to grow with us.</Paragraph>
 	<form
 		class="flex flex-col space-y-8 w-3/5 max-w-md my-10"
