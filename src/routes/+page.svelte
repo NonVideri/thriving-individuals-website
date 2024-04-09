@@ -1,18 +1,105 @@
-<script>
+<script lang="ts">
 	import Input from '$lib/Input.svelte';
 	import Section from '$lib/Section.svelte';
 	import Header from '$lib/Header.svelte';
 	import Paragraph from '$lib/Paragraph.svelte';
-	import List from '../lib/List.svelte';
-	import Link from '../lib/Link.svelte';
+	import List from '$lib/List.svelte';
+	import Link from '$lib/Link.svelte';
+	import pb from '$lib/pocketbase';
 
 	let name = '';
 	let email = '';
 	let accepted = false;
 
-	function handleSubmit() {
+	const VALUES = [
+		{
+			title: 'Freedom',
+			description:
+				'We respect freedom as a fundamental aspect of human nature. We strive to live and act as \
+        free men, both internally and externally, making the world more free one person at a time.'
+		},
+		{
+			title: 'Responsibility',
+			description:
+				'We proudly take ownership of our lives, families, businesses, and communities, to the degree \
+        that we are capable of, shaping our fates and the fate of the world around us for the better.'
+		},
+		{
+			title: 'Excellence',
+			description:
+				'We are not satisfied with mediocrity, but strive to grow and get better at who we are and what \
+        we do every single day, extending our being and influence in the ways that we choose.'
+		},
+		{
+			title: 'Empowerment',
+			description:
+				'We generously share the gift of our growth and freedom with others, who are able and willing to \
+        walk a similar path of self-improvement and personal independence.'
+		}
+	];
+
+	const DISCIPLINES = [
+		{
+			title: 'Inner Freedom',
+			description:
+				'mental health, dealing with stress & trauma, emotional intelligence, freedom from addictions, \
+        attachments, propaganda, developing virtues, living with truth and meaning.'
+		},
+		{
+			title: 'Physical Flourishing',
+			description:
+				'healthy body, free from toxins, basics of physical exercise, sleep optimization, healthy diet, \
+        biohacking.'
+		},
+		{
+			title: 'Agency',
+			description:
+				'effective thinking, decision making and action, life optimization, attention & distraction \
+        management, space management, knowledge & information management, lifehacking.'
+		},
+		{
+			title: 'Financial Freedom',
+			description:
+				'wealth creation, entrepreneurship, tax optimization, investing, Blockchain, DeFi knowledge, new \
+        finances.'
+		},
+		{
+			title: 'Free Relationships',
+			description:
+				'healthy communication, building friendships and connection, cooperation & leadership, organic \
+        organization, building local communities.'
+		},
+		{
+			title: 'Free Families',
+			description: 'parenting, freedom education, homeschooling, unschooling.'
+		},
+		{
+			title: 'Digital Freedom',
+			description:
+				'computer literacy, cybersecurity & privacy, open source software (secure communication).'
+		},
+		{
+			title: 'Security Self-Reliance',
+			description: 'basic security skills, opsec, self-defense, arms, legal knowledge.'
+		},
+		{
+			title: 'Material Independence',
+			description: 'survival skills, prepping, sustainability, material resilience.'
+		},
+		{
+			title: 'Free Movement',
+			description: 'relocation, nomading, residency optimization, free cities.'
+		}
+	];
+
+	async function handleSubmit() {
 		if (accepted) {
-			console.log('Name:', name, 'Email:', email);
+			const result = await pb.collection('subscribers').create({ email, confirmed: false });
+			if (result.ok) {
+				alert('Thank you for subscribing! Please check your email to confirm your subscription.');
+			} else {
+				alert('Something went wrong. Please try again later.');
+			}
 		} else {
 			alert('Please accept the terms & conditions');
 		}
@@ -30,12 +117,12 @@
 		<Input type="email" bind:value={email} placeholder="Email *" required />
 
 		<div class="checkbox-container">
-      <Paragraph>
-        <label class="flex items-center">
-          <input type="checkbox" bind:checked={accepted} class="w-5 h-5 mr-4" />
-          Accept&nbsp;<Link href="/terms-and-conditions">Terms & Conditions</Link>
-        </label>
-      </Paragraph>
+			<Paragraph>
+				<label class="flex items-center">
+					<input type="checkbox" bind:checked={accepted} class="w-5 h-5 mr-4" />
+					Accept&nbsp;<Link href="/terms-and-conditions">Terms & Conditions</Link>
+				</label>
+			</Paragraph>
 		</div>
 
 		<button
@@ -60,7 +147,11 @@
 		>We embrace all aspects of human flourishing and the human pursuit of virtue, growth, and
 		personal excellence.</Paragraph
 	>
-	<Paragraph>For more details, see our <Link href="/thriving-individuals-foundation-statute.pdf">statute</Link>.</Paragraph>
+	<Paragraph
+		>For more details, see our <Link href="/thriving-individuals-foundation-statute.pdf"
+			>statute</Link
+		>.</Paragraph
+	>
 </Section>
 
 <Section id="mission">
@@ -80,27 +171,7 @@
 
 <Section id="values">
 	<Header>Our Values — FREE</Header>
-	<List>
-		<li>
-			<b>Freedom</b> — We respect freedom as a fundamental aspect of human nature. We strive to live
-			and act as free men, both internally and externally, making the world more free one person at a
-			time.
-		</li>
-		<li>
-			<b>Responsibility</b> — We proudly take ownership of our lives, families, businesses, and communities,
-			to the degree that we are capable of, shaping our fates and the fate of the world around us for
-			the better.
-		</li>
-		<li>
-			<b>Excellence</b> — We are not satisfied with mediocrity, but strive to grow and get better at
-			who we are and what we do every single day, extending our being and influence in the ways that
-			we choose.
-		</li>
-		<li>
-			<b>Empowerment</b> — We generously share the gift of our growth and freedom with others, who are
-			able and willing to walk a similar path of self-improvement and personal independence.
-		</li>
-	</List>
+	<List items={VALUES} />
 </Section>
 
 <Section id="areas">
@@ -110,39 +181,6 @@
 		Individuals. It is meant to contain essential skills necessary to be a free & self-reliant man
 		in the modern era.</Paragraph
 	>
-	<List>
-		<li>
-			<b>Inner Freedom</b> — mental health, dealing with stress & trauma, emotional intelligence, freedom
-			from addictions, attachments, propaganda, developing virtues, living with truth and meaning.
-		</li>
-		<li>
-			<b>Physical Flourishing</b> — healthy body, free from toxins, basics of physical exercise, sleep
-			optimization, healthy diet, biohacking.
-		</li>
-		<li>
-			<b>Agency</b> — effective thinking, decision making and action, life optimization, attention &
-			distraction management, space management, knowledge & information management, lifehacking.
-		</li>
-		<li>
-			<b>Financial Freedom</b> — wealth creation, entrepreneurship, tax optimization, investing, Blockchain,
-			DeFi knowledge, new finances.
-		</li>
-		<li>
-			<b>Free Relationships</b> — healthy communication, building friendships and connection, cooperation
-			& leadership, organic organization, building local communities.
-		</li>
-		<li><b>Free Families</b> — parenting, freedom education, homeschooling, unschooling.</li>
-		<li>
-			<b>Digital Freedom</b> — computer literacy, cybersecurity & privacy, open source software (secure
-			communication).
-		</li>
-		<li>
-			<b>Security Self-Reliance</b> — basic security skills, opsec, self-defense, arms, legal knowledge
-		</li>
-		<li>
-			<b>Material Independence</b> — survival skills, prepping, sustainability, material resilience
-		</li>
-		<li><b>Free Movement</b> — relocation, nomading, residency optimization, free cities</li>
-	</List>
+	<List items={DISCIPLINES} />
 	<Paragraph className="mt-4">Interested? <Link href="#home">Join us today.</Link></Paragraph>
 </Section>

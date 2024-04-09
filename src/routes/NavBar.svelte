@@ -1,6 +1,7 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
 	import NavBarLink from './NavBarLink.svelte';
+  import { PUBLIC_FORUM_URL } from '$env/static/public'
 
 	let lastScroll = 0;
 	let showMenu = true;
@@ -24,8 +25,7 @@
 	class="z-10 fixed top-0 left-0 right-0 flex justify-around transition-transform duration-300 ease-in-out {!showMenu &&
 		'transform -translate-y-full'}"
 >
-	<NavBarLink href="/">Join Us</NavBarLink>
-	<NavBarLink href="/about">About</NavBarLink>
+	<NavBarLink href="/">About</NavBarLink>
 	<NavBarLink href="/team">Our Team</NavBarLink>
-	<NavBarLink href="https://forum.thrivingindividuals.org">Forum</NavBarLink>
+	<NavBarLink href="{PUBLIC_FORUM_URL}">Forums</NavBarLink>
 </nav>
