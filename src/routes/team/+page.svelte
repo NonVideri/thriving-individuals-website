@@ -9,6 +9,7 @@
     originalName?: string;
     role: string;
     description: string;
+    website?: string;
   }
 
   const teamMembers: TeamMember[] = [
@@ -17,7 +18,8 @@
       name: "Christopher Mael",
       originalName: "Krzysztof Moszyński",
       role: "Founder, President",
-      description: "Life & effectiveness coach, self-improvement mentor, systemic thinker. Chris promotes personal growth as the main source of personal freedom and civilization.",
+      description: "Life coach, self-improvement mentor, software developer. Chris brings systemic thinking to people's lives and minds, helping them discern and overcome their limitations, utilizing his multidisciplinary knowledge and various tools of practical psychology.",
+      website: "https://christophermael.com",
     },
   ];
 </script>
