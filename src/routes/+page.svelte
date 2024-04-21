@@ -5,11 +5,9 @@
 	import Paragraph from '$lib/Paragraph.svelte';
 	import List from '$lib/List.svelte';
 	import Link from '$lib/Link.svelte';
-	import pb from '$lib/pocketbase';
-
-	let name = '';
-	let email = '';
-	let accepted = false;
+	import { setAlert } from '../lib/alert.store';
+	import { enhance } from '$app/forms';
+	import type { SubmitFunction } from '@sveltejs/kit';
 
 	const VALUES = [
 		{
@@ -92,34 +90,45 @@
 		}
 	];
 
-	async function handleSubmit() {
-		if (accepted) {
-			const result = await pb.collection('subscribers').create({ email, confirmed: false });
-			if (result.ok) {
-				alert('Thank you for subscribing! Please check your email to confirm your subscription.');
-			} else {
-				alert('Something went wrong. Please try again later.');
-			}
-		} else {
-			alert('Please accept the terms & conditions');
+	const handleSubmit: SubmitFunction = ({ formData }) => {
+		if (!formData.get('accepted')) {
+			setAlert('Please accept the terms & conditions', 'warning');
+			return;
 		}
-	}
+
+		return ({ result, update }) => {
+			if (result.type === 'success') {
+				setAlert('Almost there! Please check your email to confirm the subscription.', 'success');
+				return update();
+			}
+
+			if (result.type === "failure") {
+				setAlert(`An error occurred${result.data ? `: ${result.data.message}` : "."} Please try again later.`);
+			}
+		};
+	};
 </script>
 
-<img id="home" src="/logo.png" alt="Thriving Individuals Logo" class="w-3/4 mt-12 md:mt-16 lg:mt-20" />
+<img
+	id="home"
+	src="/logo.png"
+	alt="Thriving Individuals Logo"
+	class="w-3/4 mt-12 md:mt-16 lg:mt-20"
+/>
 <Section className="mt-0 md:mt-0 xl:mt-0">
 	<Paragraph type="xl">Join us to grow with us.</Paragraph>
 	<form
 		class="flex flex-col space-y-8 w-3/5 max-w-md my-10"
-		on:submit|preventDefault={handleSubmit}
+		method="POST"
+		use:enhance={handleSubmit}
 	>
-		<Input type="text" bind:value={name} placeholder="Name *" required />
-		<Input type="email" bind:value={email} placeholder="Email *" required />
+		<Input type="text" name="name" placeholder="Name *" required />
+		<Input type="email" name="email" placeholder="Email *" required />
 
 		<div class="checkbox-container">
 			<Paragraph>
 				<label class="flex items-center">
-					<input type="checkbox" bind:checked={accepted} class="w-5 h-5 mr-4" />
+					<input type="checkbox" name="accepted" class="w-5 h-5 mr-4" />
 					Accept&nbsp;<Link href="/terms-and-conditions">Terms & Conditions</Link>
 				</label>
 			</Paragraph>
@@ -132,7 +141,7 @@
 		>
 	</form>
 	<Paragraph type="small"
-		>We only send a monthly newsletter with the most important information. We will never spam you.</Paragraph
+		>We only send occasional newsletters with the most important updates. We will never spam you.</Paragraph
 	>
 </Section>
 
