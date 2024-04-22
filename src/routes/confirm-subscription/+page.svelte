@@ -12,18 +12,17 @@
 		<Paragraph
 			>You are invited to join our community at the&nbsp;<Link href={PUBLIC_FORUM_URL}
 				>Thriving Individuals Forums</Link
-			>.</Paragraph
-		>
+			>.</Paragraph>
 	</Announcement>
 {:else}
-	<Announcement
-		title="Something went wrong"
-    >
-    <Paragraph>
-      We were unable to confirm your subscription. Please try again later or <Link href="/contact">contact us</Link>.
-    </Paragraph>
-    <Paragraph>
-      Error message: {data.message}
-    </Paragraph>
-  </Announcement>
+	<Announcement title="Something went wrong">
+		<Paragraph>
+			We were unable to confirm your subscription. Please try again later or <Link href="/contact"
+				>contact us</Link
+			>.
+		</Paragraph>
+		<Paragraph>
+			Error message: {data.message}
+		</Paragraph>
+	</Announcement>
 {/if}

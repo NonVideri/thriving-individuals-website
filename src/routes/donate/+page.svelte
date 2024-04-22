@@ -4,43 +4,43 @@
 	import Section from '../../lib/Section.svelte';
 	import Link from '../../lib/Link.svelte';
 	import Subsection from '../../lib/Subsection.svelte';
-  import CryptoWallet from './CryptoWallet.svelte';
+	import CryptoWallet from './CryptoWallet.svelte';
 	import {
-    PUBLIC_PAYPAL_ADDRESS,
+		PUBLIC_PAYPAL_ADDRESS,
 		PUBLIC_BITCOIN_ADDRESS,
 		PUBLIC_MONERO_ADDRESS,
 		PUBLIC_ETHEREUM_ADDRESS,
 		PUBLIC_SOLANA_ADDRESS,
-		PUBLIC_CARDANO_ADDRESS
+		PUBLIC_CARDANO_ADDRESS,
 	} from '$env/static/public';
 
-  const CRYPTO_WALLETS = [
-    {
-      name: 'Bitcoin',
-      address: PUBLIC_BITCOIN_ADDRESS,
-      logo: '/logos/bitcoin.svg'
-    },
-    {
-      name: 'Monero',
-      address: PUBLIC_MONERO_ADDRESS,
-      logo: '/logos/monero.svg'
-    },
-    {
-      name: 'Ethereum',
-      address: PUBLIC_ETHEREUM_ADDRESS,
-      logo: '/logos/ethereum.svg'
-    },
-    {
-      name: 'Solana',
-      address: PUBLIC_SOLANA_ADDRESS,
-      logo: '/logos/solana.svg'
-    },
-    {
-      name: 'Cardano',
-      address: PUBLIC_CARDANO_ADDRESS,
-      logo: '/logos/cardano.svg'
-    }
-  ];
+	const CRYPTO_WALLETS = [
+		{
+			name: 'Bitcoin',
+			address: PUBLIC_BITCOIN_ADDRESS,
+			logo: '/logos/bitcoin.svg',
+		},
+		{
+			name: 'Monero',
+			address: PUBLIC_MONERO_ADDRESS,
+			logo: '/logos/monero.svg',
+		},
+		{
+			name: 'Ethereum',
+			address: PUBLIC_ETHEREUM_ADDRESS,
+			logo: '/logos/ethereum.svg',
+		},
+		{
+			name: 'Solana',
+			address: PUBLIC_SOLANA_ADDRESS,
+			logo: '/logos/solana.svg',
+		},
+		{
+			name: 'Cardano',
+			address: PUBLIC_CARDANO_ADDRESS,
+			logo: '/logos/cardano.svg',
+		},
+	];
 </script>
 
 <Section>
@@ -71,10 +71,10 @@
 	<Subsection>
 		<Header type="h2">3. Cryptocurrency</Header>
 
-    {#each CRYPTO_WALLETS as { name, address, logo }}
-      {#if address}
-        <CryptoWallet {name} {address} {logo} />
-      {/if}
-    {/each}
+		{#each CRYPTO_WALLETS as { name, address, logo }}
+			{#if address}
+				<CryptoWallet {name} {address} {logo} />
+			{/if}
+		{/each}
 	</Subsection>
 </Section>

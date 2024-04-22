@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import NavBarLink from './NavBarLink.svelte';
-  import { PUBLIC_FORUM_URL } from '$env/static/public'
+	import { PUBLIC_FORUM_URL } from '$env/static/public';
 
 	let lastScroll = 0;
 	let showMenu = true;
@@ -23,10 +23,9 @@
 
 <nav
 	class="z-10 fixed top-0 left-0 right-0 flex justify-around transition-transform duration-300 ease-in-out {!showMenu &&
-		'transform -translate-y-full'}"
->
+		'transform -translate-y-full'}">
 	<NavBarLink href="/">About</NavBarLink>
 	<NavBarLink href="/team">Our team</NavBarLink>
-  <NavBarLink href="/donate">Support us</NavBarLink>
-	<NavBarLink href="{PUBLIC_FORUM_URL}">Join our community</NavBarLink>
+	<NavBarLink href="/donate">Support us</NavBarLink>
+	<NavBarLink href={PUBLIC_FORUM_URL}>Join our community</NavBarLink>
 </nav>

@@ -11,7 +11,8 @@ export const actions = {
 		const email = data.get('email');
 		if (!email) return fail(400, { message: 'Email is required' });
 
-    if (!data.get("accepted")) return fail(400, { message: 'You must accept the terms and conditions' });
+		if (!data.get('accepted'))
+			return fail(400, { message: 'You must accept the terms and conditions' });
 
 		try {
 			await pb
@@ -23,5 +24,5 @@ export const actions = {
 		}
 
 		return { success: true };
-	}
+	},
 };

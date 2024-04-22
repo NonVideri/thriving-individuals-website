@@ -11,7 +11,7 @@
 	export let logo: string;
 </script>
 
-<div class={twMerge(SECTION_CLASSES, "my-8")}>
+<div class={twMerge(SECTION_CLASSES, 'my-8')}>
 	<Header type="h4">{name}</Header>
 	<Paragraph>{address}</Paragraph>
 	<div use:qrcode={{ data: address, image: logo }} />

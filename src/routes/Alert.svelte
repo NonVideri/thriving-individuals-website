@@ -18,7 +18,7 @@
 		error: 'bg-alert-error',
 		success: 'bg-alert-success',
 		info: 'bg-alert-info',
-		warning: 'bg-alert-warning'
+		warning: 'bg-alert-warning',
 	};
 </script>
 
@@ -28,9 +28,8 @@
 		ALERT_STYLES[$alert?.type ?? 'error']
 	)}
 	bind:this={dialog}
-  on:click={() => alert.set(null)}
-  on:keydown={(e) => e.key === 'Escape' && alert.set(null)}
-  >
+	on:click={() => alert.set(null)}
+	on:keydown={(e) => e.key === 'Escape' && alert.set(null)}>
 	<Paragraph type="small">
 		{$alert?.message}
 	</Paragraph>
