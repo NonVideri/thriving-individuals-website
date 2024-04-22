@@ -11,10 +11,12 @@ export const actions = {
 		const email = data.get('email');
 		if (!email) return fail(400, { message: 'Email is required' });
 
+    if (!data.get("accepted")) return fail(400, { message: 'You must accept the terms and conditions' });
+
 		try {
 			await pb
 				.collection('subscriptions')
-				.create({ name: data.get('name'), email: data.get('email'), confirmed: false });
+				.create({ name: data.get('name'), email: data.get('email') });
 		} catch (error: any) {
 			console.error(error);
 			return fail(500, { message: error.response.message });
