@@ -55,6 +55,9 @@ devDependencies:
   svelte-check:
     specifier: ^3.4.3
     version: 3.4.6(postcss-load-config@4.0.1)(postcss@8.4.29)(svelte@4.0.5)
+  svelte-qrcode-action:
+    specifier: ^1.0.2
+    version: 1.0.2(svelte@4.0.5)
   tailwind-merge:
     specifier: ^2.2.2
     version: 2.2.2
@@ -1919,6 +1922,10 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
+  /qrcode-generator@1.4.4:
+    resolution: {integrity: sha512-HM7yY8O2ilqhmULxGMpcHSF1EhJJ9yBj8gvDEuZ6M+KGJ0YY2hKpnXvRD+hZPLrDVck3ExIGhmPtSdcjC+guuw==}
+    dev: true
+
   /queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
@@ -2090,6 +2097,12 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /styled-qr-code@1.0.0:
+    resolution: {integrity: sha512-Tye/Omr8VYUUUCiBE+GNMeJ1Tt0cIsDkLXnQGG6/Xxegyd1021wQKFAFvx/hjaTUrfwpmukWTZfXs3uc/XXN0g==}
+    dependencies:
+      qrcode-generator: 1.4.4
+    dev: true
+
   /sucrase@3.34.0:
     resolution: {integrity: sha512-70/LQEZ07TEcxiU2dz51FKaE6hCTWC6vr7FOk3Gr0U60C3shtAN+H+BFr9XlYe5xqf3RA8nrc+VIwzCfnxuXJw==}
     engines: {node: '>=8'}
@@ -2216,6 +2229,15 @@ packages:
       strip-indent: 3.0.0
       svelte: 4.0.5
       typescript: 5.1.6
+    dev: true
+
+  /svelte-qrcode-action@1.0.2(svelte@4.0.5):
+    resolution: {integrity: sha512-15xwEcg+RCPXGjH762sm5XVJu+5DA1YtqVttow4tnzhdsYXAAMF4eyHRYtCf+dG4sBwWpPmX/5LKUP4QZ6KKCQ==}
+    peerDependencies:
+      svelte: ^4.0.0
+    dependencies:
+      styled-qr-code: 1.0.0
+      svelte: 4.0.5
     dev: true
 
   /svelte@4.0.5:

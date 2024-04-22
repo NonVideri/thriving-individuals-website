@@ -26,6 +26,7 @@
 		'transform -translate-y-full'}"
 >
 	<NavBarLink href="/">About</NavBarLink>
-	<NavBarLink href="/team">Our Team</NavBarLink>
-	<NavBarLink href="{PUBLIC_FORUM_URL}">Forums</NavBarLink>
+	<NavBarLink href="/team">Our team</NavBarLink>
+  <NavBarLink href="/donate">Support us</NavBarLink>
+	<NavBarLink href="{PUBLIC_FORUM_URL}">Join our community</NavBarLink>
 </nav>

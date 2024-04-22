@@ -12,3 +12,5 @@ export const PARAGRAPH_SIZE_CLASSES: Record<ParagraphType, string> = {
   xl: 'text-lg md:text-xl xl:text-2xl 2xl:text-3xl',
   '2xl': 'text-xl md:text-2xl xl:text-3xl 2xl:text-4xl'
 };
+
+export const SECTION_CLASSES = 'flex flex-col items-center w-full'
