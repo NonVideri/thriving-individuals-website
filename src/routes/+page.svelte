@@ -118,7 +118,7 @@
 	src="/logo.png"
 	alt="Thriving Individuals Logo"
 	class="w-3/4 mt-12 md:mt-16 lg:mt-20" />
-<Section className="mt-0 md:mt-0 xl:mt-0">
+<Section class="mt-0 md:mt-0 xl:mt-0">
 	<Paragraph type="xl">Join us to grow with us.</Paragraph>
 	<form
 		class="flex flex-col space-y-8 w-3/5 max-w-md my-10"
@@ -193,5 +193,5 @@
 		era.
 	</Paragraph>
 	<List items={DISCIPLINES} />
-	<Paragraph className="mt-4">Interested? <Link href="#home">Join us today.</Link></Paragraph>
+	<Paragraph class="mt-4">Interested? <Link href="#home">Join us today.</Link></Paragraph>
 </Section>

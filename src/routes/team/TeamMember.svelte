@@ -13,13 +13,13 @@
 
 <div class="flex flex-col items-center w-[33vw] xl:w-[25vw] my-4">
 	<img src={photo} alt={name} class="rounded-full w-32 h-32 mx-auto mb-4" />
-	<Header type="h3" className="mb-0">{name}</Header>
+	<Header type="h3" class="mb-0">{name}</Header>
 	{#if originalName}
-		<Paragraph type="small" className="mt-px">({originalName})</Paragraph>
+		<Paragraph type="small" class="mt-px">({originalName})</Paragraph>
 	{/if}
-	<Paragraph type="small" className="mt-0.5">{role}</Paragraph>
-	<Paragraph className="text-center">{description}</Paragraph>
+	<Paragraph type="small" class="mt-0.5">{role}</Paragraph>
+	<Paragraph class="text-center">{description}</Paragraph>
 	{#if website}
-		<Paragraph type="small" className="mt-1"><Link href={website}>Website</Link></Paragraph>
+		<Paragraph type="small" class="mt-1"><Link href={website}>Website</Link></Paragraph>
 	{/if}
 </div>

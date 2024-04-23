@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { twMerge } from 'tailwind-merge';
 	import { SECTION_CLASSES } from './types';
+	import type { ClassValue } from 'clsx';
+	import { cn } from './utils';
 
 	export let id = '';
-	export let className = '';
+	let className: ClassValue = undefined;
+	export { className as class };
 	let section: HTMLElement;
 	let isVisible = false;
 
@@ -34,7 +36,7 @@
 <section
 	bind:this={section}
 	{id}
-	class={twMerge(
+	class={cn(
 		SECTION_CLASSES,
 		'transform translate-y-5 my-20 md:my-30 xl:my-40 px-20 md:px-40 xl:px-64 2xl:px-96',
 		isVisible ? 'opacity-100 animate-fadeIn' : 'opacity-0',

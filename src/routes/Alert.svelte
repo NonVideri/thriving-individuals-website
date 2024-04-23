@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { twMerge } from 'tailwind-merge';
 	import Paragraph from '../lib/Paragraph.svelte';
 	import { alert } from '../lib/alert.store';
+	import { cn } from '../lib/utils';
 
 	let dialog: HTMLDialogElement;
 
@@ -23,7 +23,7 @@
 </script>
 
 <dialog
-	class={twMerge(
+	class={cn(
 		'fixed bottom-[7vh] left-[5vw] z-10 m-0 px-8 py-2 rounded-md cursor-pointer text-white',
 		ALERT_STYLES[$alert?.type ?? 'error']
 	)}
