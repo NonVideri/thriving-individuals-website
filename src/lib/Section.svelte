@@ -38,9 +38,10 @@
 	{id}
 	class={cn(
 		SECTION_CLASSES,
-		'transform translate-y-5 my-20 md:my-30 xl:my-40 px-20 md:px-40 xl:px-64 2xl:px-96',
+		'transform translate-y-5 mt-20 md:mt-32 xl:mt-40 px-20 md:px-40 xl:px-64 2xl:px-96',
 		isVisible ? 'opacity-100 animate-fadeIn' : 'opacity-0',
 		className
-	)}>
+	)}
+>
 	<slot />
 </section>
