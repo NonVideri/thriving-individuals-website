@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import Paragraph from '../lib/Paragraph.svelte';
 	import { alert } from '../lib/alert.store';
 	import { cn } from '../lib/utils';
@@ -20,6 +21,24 @@
 		info: 'bg-alert-info',
 		warning: 'bg-alert-warning',
 	};
+
+	function closeDialog() {
+		alert.set(null);
+	}
+
+	onMount(() => {
+		const handleKeydown = (e: KeyboardEvent) => {
+			if (e.key === 'Escape') {
+				closeDialog();
+			}
+		};
+
+		document.addEventListener('keydown', handleKeydown);
+
+		return () => {
+			document.removeEventListener('keydown', handleKeydown);
+		};
+	});
 </script>
 
 <dialog
@@ -28,9 +47,12 @@
 		ALERT_STYLES[$alert?.type ?? 'error']
 	)}
 	bind:this={dialog}
-	on:click={() => alert.set(null)}
-	on:keydown={(e) => e.key === 'Escape' && alert.set(null)}>
-	<Paragraph type="small">
-		{$alert?.message}
-	</Paragraph>
+	aria-labelledby="dialog-title"
+	aria-modal="true"
+>
+	<button on:click={closeDialog} aria-label="Close alert">
+		<Paragraph id="dialog-title" type="small">
+			{$alert?.message}
+		</Paragraph>
+	</button>
 </dialog>
