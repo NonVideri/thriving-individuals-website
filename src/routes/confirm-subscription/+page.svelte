@@ -12,7 +12,8 @@
 		<Paragraph
 			>You are invited to join our community at the&nbsp;<Link href={PUBLIC_FORUM_URL}
 				>Thriving Individuals Forums</Link
-			>.</Paragraph>
+			>.</Paragraph
+		>
 	</Announcement>
 {:else}
 	<Announcement title="Something went wrong">
