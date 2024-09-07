@@ -55,26 +55,29 @@
 		<Header type="h2">1. Bank transfer</Header>
 		<Paragraph>
 			<p>Thriving Individuals Foundation</p>
-			<p>Bukowińska 12/1008</p>
-			<p>02-703 Warsaw, Poland</p>
 			<p>IBAN: PL 50 2530 0008 2060 1081 4632 0001</p>
 		</Paragraph>
 	</Subsection>
 
-	<Subsection>
-		<Header type="h2">2. PayPal</Header>
-		<Paragraph>
-			<p>PayPal account: <Link href={PUBLIC_PAYPAL_ADDRESS}>Link</Link></p>
-		</Paragraph>
-	</Subsection>
+	{#if PUBLIC_PAYPAL_ADDRESS}
+		<Subsection>
+			<Header type="h2">2. PayPal</Header>
+			<Paragraph>
+				<p>PayPal account: <Link href={PUBLIC_PAYPAL_ADDRESS}>Link</Link></p>
+				<p>(Paypal takes a 5% commission from all donations.)</p>
+			</Paragraph>
+		</Subsection>
+	{/if}
 
-	<Subsection>
-		<Header type="h2">3. Cryptocurrency</Header>
+	{#if CRYPTO_WALLETS.some(({ address }) => address)}
+		<Subsection>
+			<Header type="h2">3. Cryptocurrency</Header>
 
-		{#each CRYPTO_WALLETS as { name, address, logo }}
-			{#if address}
-				<CryptoWallet {name} {address} {logo} />
-			{/if}
-		{/each}
-	</Subsection>
+			{#each CRYPTO_WALLETS as { name, address, logo }}
+				{#if address}
+					<CryptoWallet {name} {address} {logo} />
+				{/if}
+			{/each}
+		</Subsection>
+	{/if}
 </Section>
