@@ -14,3 +14,6 @@ export const PARAGRAPH_SIZE_CLASSES: Record<ParagraphType, string> = {
 };
 
 export const SECTION_CLASSES = 'flex flex-col items-center w-full';
+
+export const NAVBAR_LINK_CLASSES =
+	'block py-3 lg:py-4 xl:py-5 text-center text-white bg-gray-800 hover:bg-gray-700 transition-all duration-200';

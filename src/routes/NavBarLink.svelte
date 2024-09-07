@@ -1,15 +1,44 @@
 <script lang="ts">
-	import { PARAGRAPH_SIZE_CLASSES } from '../lib/types';
+	import { NAVBAR_LINK_CLASSES, PARAGRAPH_SIZE_CLASSES } from '../lib/types';
 	import { cn } from '../lib/utils';
 
 	export let href = '';
+	export let text = '';
+	let showDropdown = false;
+
+	function handleMouseEnter() {
+		showDropdown = true;
+	}
+
+	function handleMouseLeave() {
+		showDropdown = false;
+	}
 </script>
 
-<a
-	{href}
-	class={cn(
-		'text-white font-semibold no-underline w-full h-full p-3 lg:p-4 xl:p-5 text-center bg-gray-800 hover:bg-gray-700 transition-all duration-300',
-		PARAGRAPH_SIZE_CLASSES['large']
-	)}>
-	<slot />
-</a>
+<button
+	class="relative group flex-1"
+	on:mouseenter={handleMouseEnter}
+	on:mouseleave={handleMouseLeave}
+	aria-haspopup="true"
+	aria-expanded={showDropdown}
+>
+	<a
+		{href}
+		class={cn(
+			NAVBAR_LINK_CLASSES,
+			PARAGRAPH_SIZE_CLASSES['large'],
+			'w-full font-semibold no-underline'
+		)}
+	>
+		{text}
+	</a>
+
+	<div
+		class={cn(
+			'absolute left-0 w-full bg-gray-800 shadow-lg transition-all duration-300 transform',
+			showDropdown ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
+		)}
+	>
+		<slot />
+	</div>
+</button>
