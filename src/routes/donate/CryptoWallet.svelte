@@ -3,8 +3,9 @@
 
 	import Header from '../../lib/Header.svelte';
 	import Paragraph from '../../lib/Paragraph.svelte';
-	import { SECTION_CLASSES } from '../../lib/types';
+	import { SECTION_CLASSES } from '$lib/classes';
 	import { cn } from '../../lib/utils';
+	import ClipboardButton from '../../lib/ClipboardButton.svelte';
 
 	export let name: string;
 	export let address: string;
@@ -13,6 +14,6 @@
 
 <div class={cn(SECTION_CLASSES, 'my-8')}>
 	<Header type="h4">{name}</Header>
-	<Paragraph>{address}</Paragraph>
+	<Paragraph><ClipboardButton isDark copy={address}>{address}</ClipboardButton></Paragraph>
 	<div use:qrcode={{ data: address, image: logo }} />
 </div>
