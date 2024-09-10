@@ -52,7 +52,7 @@
 
 	<button
 		type="submit"
-		class="px-6 py-4 text-lg border-none rounded-md bg-gray-800 text-white cursor-pointer font-bold hover:bg-gray-700 transition-all duration-300"
+		class="px-6 py-4 text-lg border-none rounded-md bg-surface-800 text-white cursor-pointer font-bold hover:bg-surface-700 transition-all duration-200"
 	>
 		Subscribe
 	</button>
