@@ -23,13 +23,15 @@
 </script>
 
 <nav
-	class="z-10 fixed top-0 left-0 right-0 bg-gray-800 flex justify-around transition-transform duration-200 ease-in-out {!showMenu &&
+	class="z-10 fixed top-0 left-0 right-0 bg-surface-800 flex justify-around transition-transform duration-200 ease-in-out {!showMenu &&
 		'transform -translate-y-full'}"
 >
 	<NavBarLink href="/" text="About us">
 		<NavBarDropdown>
 			<NavBarDropdownLink href="/framework" text="Practical Freedom Framework" />
 			<NavBarDropdownLink href="/team" text="Our team" />
+			<NavBarDropdownLink href="/statute" text="Statute" />
+			<NavBarDropdownLink href="/legal" text="Legal information" />
 		</NavBarDropdown>
 	</NavBarLink>
 	<NavBarLink href="/join" text="Join us" />

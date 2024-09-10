@@ -4,6 +4,7 @@
 	import Paragraph from '$lib/Paragraph.svelte';
 	import Section from '$lib/Section.svelte';
 	import Link from '$lib/Link.svelte';
+	import TopSeparator from '../../lib/TopSeparator.svelte';
 
 	const DISCIPLINES = [
 		{
@@ -60,7 +61,9 @@
 	];
 </script>
 
-<Section id="areas">
+<TopSeparator />
+
+<Section id="areas" isDark isVisible>
 	<Header>Practical Freedom Framework</Header>
 	<Paragraph>
 		This is a range of skills and competences we are teaching and promoting at Thriving Individuals.
@@ -68,5 +71,8 @@
 		era.
 	</Paragraph>
 	<List items={DISCIPLINES} />
-	<Paragraph class="mt-4">Interested? <Link href="/subscribe">Join us today.</Link></Paragraph>
+	<Paragraph class="mt-4"
+		>If you like what you see, feel free to <Link href="/join" isDark>join our community</Link
+		>.</Paragraph
+	>
 </Section>
