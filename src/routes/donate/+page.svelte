@@ -3,7 +3,6 @@
 	import Paragraph from '../../lib/Paragraph.svelte';
 	import Section from '../../lib/Section.svelte';
 	import Link from '../../lib/Link.svelte';
-	import Subsection from '../../lib/Subsection.svelte';
 	import CryptoWallet from './CryptoWallet.svelte';
 	import {
 		PUBLIC_PAYPAL_ADDRESS,
@@ -13,6 +12,9 @@
 		PUBLIC_SOLANA_ADDRESS,
 		PUBLIC_CARDANO_ADDRESS,
 	} from '$env/static/public';
+	import TopSeparator from '../../lib/TopSeparator.svelte';
+	import ClipboardButton from '../../lib/ClipboardButton.svelte';
+	import { THRIVING_INDIVIDUALS_IBAN } from '../../lib/constants';
 
 	const CRYPTO_WALLETS = [
 		{
@@ -43,41 +45,45 @@
 	];
 </script>
 
+<TopSeparator />
 <Section>
-	<Subsection>
-		<Header type="h1">Support us</Header>
-		<Paragraph>
-			If you resonate with our mission, you can support us using the following means:
-		</Paragraph>
-	</Subsection>
-
-	<Subsection>
-		<Header type="h2">1. Bank transfer</Header>
-		<Paragraph>
-			<p>Thriving Individuals Foundation</p>
-			<p>IBAN: PL 50 2530 0008 2060 1081 4632 0001</p>
-		</Paragraph>
-	</Subsection>
-
-	{#if PUBLIC_PAYPAL_ADDRESS}
-		<Subsection>
-			<Header type="h2">2. PayPal</Header>
-			<Paragraph>
-				<p>PayPal account: <Link href={PUBLIC_PAYPAL_ADDRESS}>Link</Link></p>
-				<p>(Paypal takes a 5% commission from all donations.)</p>
-			</Paragraph>
-		</Subsection>
-	{/if}
-
-	{#if CRYPTO_WALLETS.some(({ address }) => address)}
-		<Subsection>
-			<Header type="h2">3. Cryptocurrency</Header>
-
-			{#each CRYPTO_WALLETS as { name, address, logo }}
-				{#if address}
-					<CryptoWallet {name} {address} {logo} />
-				{/if}
-			{/each}
-		</Subsection>
-	{/if}
+	<Header type="h1">Support us</Header>
+	<Paragraph>
+		If you resonate with our mission, you can support us using the following means:
+	</Paragraph>
 </Section>
+
+<Section isDark>
+	<Header type="h2">1. Bank transfer</Header>
+	<Paragraph isData>Thriving Individuals Foundation</Paragraph>
+	<Paragraph isData
+		>IBAN: <ClipboardButton isDark copy={THRIVING_INDIVIDUALS_IBAN.replace(/\s+/g, '')}
+			>{THRIVING_INDIVIDUALS_IBAN}</ClipboardButton
+		></Paragraph
+	>
+	<Paragraph isData
+		>SWIFT/BIC: <ClipboardButton isDark copy="NESBPLPW">NESBPLPW</ClipboardButton> (Nest Bank)</Paragraph
+	>
+</Section>
+
+{#if PUBLIC_PAYPAL_ADDRESS}
+	<Section>
+		<Header type="h2">2. PayPal</Header>
+		<Paragraph>
+			<p>PayPal account: <Link href={PUBLIC_PAYPAL_ADDRESS}>Link</Link></p>
+			<p>(Paypal takes a 5% commission from all donations.)</p>
+		</Paragraph>
+	</Section>
+{/if}
+
+{#if CRYPTO_WALLETS.some(({ address }) => address)}
+	<Section isDark>
+		<Header type="h2">3. Cryptocurrency</Header>
+
+		{#each CRYPTO_WALLETS as { name, address, logo }}
+			{#if address}
+				<CryptoWallet {name} {address} {logo} />
+			{/if}
+		{/each}
+	</Section>
+{/if}
