@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { PARAGRAPH_SIZE_CLASSES, type ParagraphType } from './types';
+	import { type ParagraphType } from './types';
+	import { PARAGRAPH_SIZE_CLASSES } from './classes';
 	import { cn } from './utils';
 
 	export let title: string;

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { NAVBAR_LINK_CLASSES, PARAGRAPH_SIZE_CLASSES } from '../lib/types';
+	import { NAVBAR_LINK_CLASSES, PARAGRAPH_SIZE_CLASSES } from '$lib/classes';
 	import { cn } from '../lib/utils';
 
 	export let href = '';
@@ -35,7 +35,7 @@
 
 	<div
 		class={cn(
-			'absolute left-0 w-full bg-gray-800 shadow-lg transition-all duration-300 transform',
+			'absolute left-0 w-full bg-surface-800 shadow-lg transition-all duration-300 transform',
 			showDropdown ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
 		)}
 	>
