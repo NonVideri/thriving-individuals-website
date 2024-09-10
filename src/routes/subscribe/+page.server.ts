@@ -1,5 +1,5 @@
 import { fail } from '@sveltejs/kit';
-import pb from '../../lib/pocketbase';
+import pb from '$lib/pocketbase';
 
 export const actions = {
 	default: async ({ request }) => {
