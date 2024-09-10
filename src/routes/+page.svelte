@@ -33,31 +33,24 @@
 	];
 </script>
 
-<img
-	id="home"
-	src="/logo.png"
-	alt="Thriving Individuals Logo"
-	class="animate-fadeIn w-3/4 mt-12 md:mt-16 lg:mt-20"
-/>
+<img id="home" src="/logo.png" alt="Thriving Individuals Logo" class="animate-fadeIn w-[90%]" />
 
-<Section id="about" class="mt-10 md:mt-15 xl:mt-20">
+<Section id="about" class="mt-4 md:mt-6 xl:mt-8">
 	<Header>About Us</Header>
 	<Paragraph>
-		We empower freedom-loving people all around the world to achieve success in their personal
-		lives, and live them to the fullest, in freedom and independence.
+		We are a global community of freedom-loving individuals, who are dedicated to personal growth,
+		and the pursuit of excellence in all aspects of life.
 	</Paragraph>
 	<Paragraph>
-		We embrace all aspects of human flourishing and the human pursuit of virtue, growth, and
-		personal excellence.
+		We empower free people all around the world to achieve success in their personal lives, and live
+		them to the fullest, in freedom and independence.
 	</Paragraph>
 	<Paragraph>
-		For more details, see our <Link href="/thriving-individuals-foundation-statute.pdf"
-			>statute</Link
-		>.
+		Interested? <Link href="/join">Join us</Link>.
 	</Paragraph>
 </Section>
 
-<Section id="mission">
+<Section id="mission" isDark>
 	<Header>Our Mission</Header>
 	<Paragraph>
 		We don't practice liberty activism, but we empower the ones who do.<br />
@@ -69,10 +62,13 @@
 
 <Section id="vision">
 	<Header>Our Vision</Header>
-	<Paragraph>In progress...</Paragraph>
+	<Paragraph>
+		We embrace all aspects of human flourishing and the human pursuit of virtue, growth, and
+		personal excellence.
+	</Paragraph>
 </Section>
 
-<Section id="values">
+<Section id="values" isDark>
 	<Header>Our Values — FREE</Header>
 	<List items={VALUES} />
 </Section>
