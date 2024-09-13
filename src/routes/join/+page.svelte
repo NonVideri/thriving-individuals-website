@@ -42,15 +42,15 @@
 <TopSeparator />
 
 <Section>
-  <Header>Join our newsletter:</Header>
-  <Paragraph type="small">
-    We only send occasional emails with the most important updates. We will never spam you.
-  </Paragraph>
+	<Header>Join our newsletter:</Header>
+	<Paragraph type="small">
+		We only send occasional emails with the most important updates. We will never spam you.
+	</Paragraph>
 	<form
-  class="flex flex-col space-y-4 md:space-y-6 xl:space-y-8 w-full max-w-md my-6"
-  method="POST"
-  action="?/subscribe"
-  use:enhance={handleSubmit}
+		class="flex flex-col space-y-4 md:space-y-6 xl:space-y-8 w-full max-w-md my-6"
+		method="POST"
+		action="?/subscribe"
+		use:enhance={handleSubmit}
 	>
 		<Input type="text" name="name" placeholder="Name *" required />
 		<Input type="email" name="email" placeholder="Email *" required />
