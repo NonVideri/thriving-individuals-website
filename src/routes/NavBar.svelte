@@ -3,6 +3,7 @@
 	import NavBarLink from './NavBarLink.svelte';
 	import NavBarDropdown from './NavBarDropdown.svelte';
 	import NavBarDropdownLink from './NavBarDropdownLink.svelte';
+	import { PUBLIC_FORUM_URL } from '$env/static/public';
 
 	let lastScroll = 0;
 	let showMenu = true;
@@ -34,6 +35,10 @@
 			<NavBarDropdownLink href="/legal" text="Legal information" />
 		</NavBarDropdown>
 	</NavBarLink>
-	<NavBarLink href="/join" text="Join us" />
+	<NavBarLink href={PUBLIC_FORUM_URL} text="Join us">
+		<NavBarDropdown>
+			<NavBarDropdownLink href="/join" text="Join our newsletter" />
+		</NavBarDropdown>
+	</NavBarLink>
 	<NavBarLink href="/donate" text="Support us" />
 </nav>
