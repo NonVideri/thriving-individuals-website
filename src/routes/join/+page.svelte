@@ -42,12 +42,12 @@
 <TopSeparator />
 
 <Section>
-	<Header>Join our newsletter:</Header>
+	<Header>Join our elite mailing list</Header>
 	<Paragraph type="small">
 		We only send occasional emails with the most important updates. We will never spam you.
 	</Paragraph>
 	<form
-		class="flex flex-col space-y-4 md:space-y-6 xl:space-y-8 w-full max-w-md my-6"
+		class="flex flex-col space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8 w-full max-w-md my-6"
 		method="POST"
 		action="?/subscribe"
 		use:enhance={handleSubmit}
@@ -74,10 +74,8 @@
 </Section>
 
 <Section isDark>
-	<Header>Join our private community:</Header>
-	<Paragraph>
-		Join our forums to interact with ambitious free people from all around the world:
-	</Paragraph>
+	<Header>Join our private community</Header>
+	<Paragraph>Interact with ambitious Individuals from all around the world:</Paragraph>
 	<a
 		class="block rounded-xl mt-4 md:mt-6 lg:mt-8 bg-white"
 		href={PUBLIC_FORUM_URL}
