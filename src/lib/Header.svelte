@@ -5,7 +5,7 @@
 	export let type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h2';
 	let className: ClassValue = undefined;
 	export { className as class };
-	const HEADER_CLASSES = 'mx-5 font-semibold';
+	const HEADER_CLASSES = 'md:mx-5 font-semibold';
 </script>
 
 {#if type === 'h1'}

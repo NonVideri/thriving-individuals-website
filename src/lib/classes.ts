@@ -8,7 +8,7 @@ export const PARAGRAPH_SIZE_CLASSES: Record<ParagraphType, string> = {
 	'2xl': 'text-lg sm:text-xl md:text-2xl xl:text-3xl 2xl:text-4xl',
 };
 
-export const SECTION_CLASSES = 'flex flex-col items-center w-full';
+export const SECTION_CLASSES = 'flex flex-col sm:items-center w-full';
 
 export const NAVBAR_LINK_CLASSES =
 	'block py-3 lg:py-4 xl:py-5 text-center text-white bg-secondary-800 hover:bg-secondary-600 transition-all duration-200';
