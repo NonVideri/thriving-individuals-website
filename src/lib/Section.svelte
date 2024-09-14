@@ -46,7 +46,7 @@
 	<div
 		class={cn(
 			'py-12 md:py-16 xl:py-24 px-16 sm:px-16 md:px-20 lg:px-40 xl:px-64 2xl:px-80',
-			isDark ? 'bg-surface-800 text-white' : 'bg-primary-600 text-black',
+			isDark ? 'bg-surface-800 text-white' : 'bg-primary-600 selection:bg-surface-300 text-black',
 			SECTION_CLASSES,
 			className
 		)}
