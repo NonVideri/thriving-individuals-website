@@ -3,11 +3,11 @@
 	import { PARAGRAPH_SIZE_CLASSES } from './classes';
 	import { cn } from './utils';
 
-	export let title: string;
+	export let title: string | undefined = undefined;
 	export let description: string;
 	export let type: ParagraphType = 'normal';
 </script>
 
-<li class={cn('my-0.5', PARAGRAPH_SIZE_CLASSES[type])}>
-	<strong>{title}</strong> — {description}
+<li class={cn('my-2', PARAGRAPH_SIZE_CLASSES[type])}>
+	{#if title}<strong>{title}</strong> — {/if}{description}
 </li>

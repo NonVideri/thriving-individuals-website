@@ -16,7 +16,7 @@
 	{id}
 	class={cn(
 		PARAGRAPH_SIZE_CLASSES[type],
-		isData ? 'leading-relaxed' : 'py-1 md:py-2 leading-relaxed',
+		isData ? 'leading-relaxed' : 'my-1 md:my-2 leading-relaxed',
 		isBold && 'font-semibold',
 		className
 	)}
