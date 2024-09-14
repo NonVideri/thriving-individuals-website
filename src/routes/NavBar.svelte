@@ -29,7 +29,7 @@
 >
 	<NavBarLink href="/" text="About us">
 		<NavBarDropdown>
-			<NavBarDropdownLink href="/framework" text="Practical Freedom Framework" />
+			<!-- <NavBarDropdownLink href="/framework" text="Practical Freedom Framework" /> -->
 			<NavBarDropdownLink href="/team" text="Our team" />
 			<NavBarDropdownLink href="/statute" text="Statute" />
 			<NavBarDropdownLink href="/legal" text="Legal information" />
