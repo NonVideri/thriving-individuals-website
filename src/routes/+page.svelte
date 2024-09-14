@@ -4,6 +4,7 @@
 	import Paragraph from '$lib/Paragraph.svelte';
 	import List from '$lib/List.svelte';
 	import Link from '$lib/Link.svelte';
+	import { Routes } from '$lib/constants';
 </script>
 
 <img id="home" src="/logo.png" alt="Thriving Individuals Logo" class="animate-fadeIn w-[90%]" />
@@ -23,7 +24,7 @@
 		excellence.
 	</Paragraph>
 	<Paragraph>
-		Interested? <Link href="/join">Join us</Link>.
+		Interested? <Link href={Routes.JOIN}>Join us</Link>.
 	</Paragraph>
 </Section>
 

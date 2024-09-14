@@ -1,8 +1,9 @@
 <script lang="ts">
-	import Announcement from '../../lib/Announcement.svelte';
-	import Paragraph from '../../lib/Paragraph.svelte';
-	import Link from '../../lib/Link.svelte';
+	import Announcement from '$lib/Announcement.svelte';
+	import Paragraph from '$lib/Paragraph.svelte';
+	import Link from '$lib/Link.svelte';
 	import { PUBLIC_FORUM_URL } from '$env/static/public';
+	import { Routes } from '$lib/constants';
 
 	export let data;
 </script>
@@ -18,8 +19,8 @@
 {:else}
 	<Announcement title="Something went wrong">
 		<Paragraph>
-			We were unable to confirm your subscription. Please try again later or <Link href="/contact"
-				>contact us</Link
+			We were unable to confirm your subscription. Please try again later or <Link
+				href={Routes.CONTACT}>contact us</Link
 			>.
 		</Paragraph>
 		<Paragraph>

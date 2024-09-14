@@ -10,6 +10,7 @@
 	import Input from '$lib/Input.svelte';
 	import Link from '$lib/Link.svelte';
 	import { setAlert } from '$lib/alert.store';
+	import { Routes } from '$lib/constants';
 
 	let forumElement: HTMLAnchorElement;
 
@@ -49,7 +50,7 @@
 	<form
 		class="flex flex-col space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8 w-full max-w-md my-6"
 		method="POST"
-		action="?/subscribe"
+		action={`?${Routes.SUBSCRIBE}`}
 		use:enhance={handleSubmit}
 	>
 		<Input type="text" name="name" placeholder="Name *" required />
@@ -59,7 +60,7 @@
 			<Paragraph class="my-0 py-0">
 				<label class="flex items-center">
 					<input type="checkbox" name="accepted" class="w-5 h-5 mr-4" />
-					Accept&nbsp;<Link href="/terms-and-conditions">Terms & Conditions</Link>
+					Accept&nbsp;<Link href={Routes.TERMS_AND_CONDITIONS}>Terms & Conditions</Link>
 				</label>
 			</Paragraph>
 		</div>

@@ -1,6 +1,7 @@
 <script>
 	import ClipboardButton from '../../lib/ClipboardButton.svelte';
 	import {
+		Routes,
 		THRIVING_INDIVIDUALS_IBAN,
 		THRIVING_INDIVIDUALS_NIP,
 		THRIVING_INDIVIDUALS_REGON,
@@ -39,5 +40,5 @@
 	<Paragraph isData
 		>SWIFT/BIC: <ClipboardButton copy="NESBPLPW">NESBPLPW</ClipboardButton> (Nest Bank)</Paragraph
 	>
-	<Paragraph>See other ways to support us <Link href="/donate">here</Link>.</Paragraph>
+	<Paragraph>See other ways to support us <Link href={Routes.DONATE}>here</Link>.</Paragraph>
 </Section>

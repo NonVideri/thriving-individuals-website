@@ -5,6 +5,7 @@
 	import Section from '$lib/Section.svelte';
 	import Link from '$lib/Link.svelte';
 	import TopSeparator from '../../lib/TopSeparator.svelte';
+	import { Routes } from '$lib/constants';
 </script>
 
 <TopSeparator />
@@ -71,7 +72,7 @@
 		]}
 	/>
 	<Paragraph class="mt-4"
-		>If you like what you see, feel free to <Link href="/join" isDark>join our community</Link
+		>If you like what you see, feel free to <Link href={Routes.JOIN} isDark>join our community</Link
 		>.</Paragraph
 	>
 </Section>

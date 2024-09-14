@@ -4,6 +4,7 @@
 	import NavBarDropdown from './NavBarDropdown.svelte';
 	import NavBarDropdownLink from './NavBarDropdownLink.svelte';
 	import { PUBLIC_FORUM_URL } from '$env/static/public';
+	import { Routes } from '$lib/constants';
 
 	let lastScroll = 0;
 	let showMenu = true;
@@ -27,18 +28,18 @@
 	class="z-10 fixed top-0 left-0 right-0 bg-surface-800 flex justify-around transition-transform duration-200 ease-in-out {!showMenu &&
 		'transform -translate-y-full'}"
 >
-	<NavBarLink href="/" text="About us">
+	<NavBarLink href={Routes.HOME} text="About us">
 		<NavBarDropdown>
-			<!-- <NavBarDropdownLink href="/framework" text="Practical Freedom Framework" /> -->
-			<NavBarDropdownLink href="/team" text="Our team" />
-			<NavBarDropdownLink href="/statute" text="Statute" />
-			<NavBarDropdownLink href="/legal" text="Legal information" />
+			<!-- <NavBarDropdownLink href={Routes.FRAMEWORK} text="Practical Freedom Framework" /> -->
+			<NavBarDropdownLink href={Routes.TEAM} text="Our team" />
+			<NavBarDropdownLink href={Routes.STATUTE} text="Statute" />
+			<NavBarDropdownLink href={Routes.LEGAL} text="Legal information" />
 		</NavBarDropdown>
 	</NavBarLink>
 	<NavBarLink href={PUBLIC_FORUM_URL} text="Join us">
 		<NavBarDropdown>
-			<NavBarDropdownLink href="/join" text="Join our newsletter" />
+			<NavBarDropdownLink href={Routes.JOIN} text="Join our newsletter" />
 		</NavBarDropdown>
 	</NavBarLink>
-	<NavBarLink href="/donate" text="Support us" />
+	<NavBarLink href={Routes.DONATE} text="Support us" />
 </nav>
