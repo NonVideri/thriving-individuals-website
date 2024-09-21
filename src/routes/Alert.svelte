@@ -16,10 +16,10 @@
 	});
 
 	const ALERT_STYLES = {
-		error: 'bg-alert-error',
-		success: 'bg-alert-success',
-		info: 'bg-alert-info',
-		warning: 'bg-alert-warning',
+		error: 'bg-error-500',
+		success: 'bg-success-500',
+		info: 'bg-secondary-500',
+		warning: 'bg-warning-500',
 	};
 
 	function closeDialog() {

@@ -56,18 +56,7 @@ const config = {
 				'9xl': '8rem',
 			},
 			colors: {
-				blue: {
-					regular: '#082dfd',
-					darker: '#0820a6',
-				},
 				black: '#02022C',
-				gold: '#fdd609',
-				alert: {
-					error: '#d32f2f',
-					success: '#2e7d32',
-					info: '#0288d1',
-					warning: '#ed6c02',
-				},
 			},
 		},
 	},
