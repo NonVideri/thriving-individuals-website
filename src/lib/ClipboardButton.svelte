@@ -35,16 +35,14 @@
 	><slot /><span class="relative">
 		<Fa
 			class={cn('inline ml-2', isDark ? 'text-secondary-300' : 'text-primary-800')}
-			icon={copied ? faCheck : faCopy}
-		/>
+			icon={copied ? faCheck : faCopy} />
 		{#if copied}
 			<span
 				out:fade
 				class={cn(
 					'absolute px-1 rounded-lg bottom-6',
 					isDark ? 'bg-secondary-400 text-white' : 'bg-primary-800 text-black'
-				)}
-			>
+				)}>
 				Copied!
 			</span>
 		{/if}

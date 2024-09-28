@@ -1,14 +1,17 @@
 <script lang="ts">
+	import { getModalStore } from '@skeletonlabs/skeleton';
 	import type { SubmitFunction } from '@sveltejs/kit';
 	import { enhance } from '$app/forms';
 
-	import { setAlert } from './alert.store';
-	import Paragraph from './Paragraph.svelte';
-	import Input from './Input.svelte';
-	import Link from './Link.svelte';
-	import Header from './Header.svelte';
-	import { getModalStore } from '@skeletonlabs/skeleton';
+	import { setAlert } from '$lib/alert.store';
+	import { FORM_CLASSES } from '$lib/classes';
 	import { Routes } from '$lib/constants';
+	import Header from '$lib/Header.svelte';
+	import Input from '$lib/Input.svelte';
+	import Link from '$lib/Link.svelte';
+	import Paragraph from '$lib/Paragraph.svelte';
+	import SubmitButton from '$lib/SubmitButton.svelte';
+	import { cn } from '$lib/utils';
 
 	const modalStore = getModalStore();
 
@@ -45,16 +48,14 @@
 </script>
 
 <form
-	class="absolute flex flex-col space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8 pt-8 pb-10 px-32 max-w-2xl rounded-xl bg-primary-600"
+	class={cn(FORM_CLASSES, 'absolute pt-8 pb-10 px-32 max-w-2xl rounded-xl bg-primary-600')}
 	method="POST"
-	action={`?${Routes.SUBSCRIBE}`}
-	use:enhance={handleSubmit}
->
+	action={Routes.SUBSCRIBE}
+	use:enhance={handleSubmit}>
 	<button
 		type="button"
 		class="absolute top-2 right-5 text-3xl text-black cursor-pointer"
-		on:click={handleClose}
-	>
+		on:click={handleClose}>
 		&times;
 	</button>
 	<Header type="h4" class="self-center">Join our elite mailing list</Header>
@@ -70,12 +71,7 @@
 		</Paragraph>
 	</div>
 
-	<button
-		type="submit"
-		class="px-6 py-4 text-lg border-none rounded-md bg-surface-800 text-white cursor-pointer font-bold hover:bg-surface-700 transition-all duration-200"
-	>
-		Subscribe
-	</button>
+	<SubmitButton>Subscribe</SubmitButton>
 	<Paragraph type="small">
 		We only send occasional emails with the most important updates. We will never spam you.
 	</Paragraph>

@@ -12,3 +12,5 @@ export const SECTION_CLASSES = 'flex flex-col sm:items-center w-full';
 
 export const NAVBAR_LINK_CLASSES =
 	'block py-3 lg:py-4 xl:py-5 text-center text-white bg-secondary-800 hover:bg-secondary-600 transition-all duration-200';
+
+export const FORM_CLASSES = 'flex flex-col space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8';
