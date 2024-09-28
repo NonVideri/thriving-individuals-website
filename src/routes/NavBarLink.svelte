@@ -4,6 +4,7 @@
 
 	export let href = '';
 	export let text = '';
+	export let target = '';
 	let showDropdown = false;
 
 	function handleMouseEnter() {
@@ -20,16 +21,15 @@
 	on:mouseenter={handleMouseEnter}
 	on:mouseleave={handleMouseLeave}
 	aria-haspopup="true"
-	aria-expanded={showDropdown}
->
+	aria-expanded={showDropdown}>
 	<a
 		{href}
+		{target}
 		class={cn(
 			NAVBAR_LINK_CLASSES,
 			PARAGRAPH_SIZE_CLASSES['large'],
 			'w-full font-semibold no-underline'
-		)}
-	>
+		)}>
 		{text}
 	</a>
 
@@ -37,8 +37,7 @@
 		class={cn(
 			'absolute left-0 w-full bg-surface-800 shadow-lg transition-all duration-300 transform',
 			showDropdown ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
-		)}
-	>
+		)}>
 		<slot />
 	</div>
 </button>
