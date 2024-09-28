@@ -42,8 +42,7 @@
 				description:
 					'Free communities so self-reliant and prosperous, that they are impossible to control, and are allowed to flourish in peace.',
 			},
-		]}
-	/>
+		]} />
 </Section>
 
 <Section>
@@ -61,8 +60,7 @@
 				description:
 					'We create sustainable foundations for free communities that can resist tyranny.',
 			},
-		]}
-	/>
+		]} />
 </Section>
 
 <Section isDark>
@@ -93,6 +91,5 @@
 					'We generously share the gift of our growth and freedom with others, who are able and willing to \
           walk a similar path of self-improvement and personal independence.',
 			},
-		]}
-	/>
+		]} />
 </Section>

@@ -6,11 +6,13 @@
 	import Header from '$lib/Header.svelte';
 	import Paragraph from '$lib/Paragraph.svelte';
 	import Section from '$lib/Section.svelte';
-	import TopSeparator from '$lib/TopSeparator.svelte';
 	import Input from '$lib/Input.svelte';
 	import Link from '$lib/Link.svelte';
 	import { setAlert } from '$lib/alert.store';
 	import { Routes } from '$lib/constants';
+	import { cn } from '$lib/utils';
+	import { FORM_CLASSES } from '$lib/classes';
+	import SubmitButton from '$lib/SubmitButton.svelte';
 
 	let forumElement: HTMLAnchorElement;
 
@@ -40,19 +42,16 @@
 	};
 </script>
 
-<TopSeparator />
-
-<Section>
+<Section isVisible>
 	<Header>Join our elite mailing list</Header>
 	<Paragraph type="small">
 		We only send occasional emails with the most important updates. We will never spam you.
 	</Paragraph>
 	<form
-		class="flex flex-col space-y-5 md:space-y-6 lg:space-y-7 xl:space-y-8 w-full max-w-md my-6"
+		class={cn(FORM_CLASSES, 'w-full max-w-md my-6')}
 		method="POST"
 		action={`?${Routes.SUBSCRIBE}`}
-		use:enhance={handleSubmit}
-	>
+		use:enhance={handleSubmit}>
 		<Input type="text" name="name" placeholder="Name *" required />
 		<Input type="email" name="email" placeholder="Email *" required />
 
@@ -65,12 +64,7 @@
 			</Paragraph>
 		</div>
 
-		<button
-			type="submit"
-			class="px-6 py-4 text-lg border-none rounded-md bg-surface-800 text-white cursor-pointer font-bold hover:bg-surface-700 transition-all duration-200"
-		>
-			Subscribe
-		</button>
+		<SubmitButton>Subscribe</SubmitButton>
 	</form>
 </Section>
 
@@ -82,13 +76,11 @@
 		href={PUBLIC_FORUM_URL}
 		target="_blank"
 		rel="noopener noreferrer"
-		bind:this={forumElement}
-	>
+		bind:this={forumElement}>
 		<img
 			id="home"
 			src="/logo-forum.png"
 			alt="Thriving Individuals Community Logo"
-			class="mx-auto rounded-lg hover:opacity-90 transition-opacity duration-200"
-		/>
+			class="mx-auto rounded-lg hover:opacity-90 transition-opacity duration-200" />
 	</a>
 </Section>

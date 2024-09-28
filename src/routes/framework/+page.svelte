@@ -4,11 +4,8 @@
 	import Paragraph from '$lib/Paragraph.svelte';
 	import Section from '$lib/Section.svelte';
 	import Link from '$lib/Link.svelte';
-	import TopSeparator from '../../lib/TopSeparator.svelte';
 	import { Routes } from '$lib/constants';
 </script>
-
-<TopSeparator />
 
 <Section isDark isVisible>
 	<Header>Practical Freedom Framework</Header>
@@ -69,10 +66,8 @@
 				title: 'Free Movement',
 				description: 'relocation, nomading, residency optimization, free cities.',
 			},
-		]}
-	/>
+		]} />
 	<Paragraph class="mt-4"
 		>If you like what you see, feel free to <Link href={Routes.JOIN} isDark>join our community</Link
-		>.</Paragraph
-	>
+		>.</Paragraph>
 </Section>

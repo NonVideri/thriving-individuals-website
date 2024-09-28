@@ -12,7 +12,6 @@
 		PUBLIC_SOLANA_ADDRESS,
 		PUBLIC_CARDANO_ADDRESS,
 	} from '$env/static/public';
-	import TopSeparator from '../../lib/TopSeparator.svelte';
 	import ClipboardButton from '../../lib/ClipboardButton.svelte';
 	import { THRIVING_INDIVIDUALS_IBAN } from '../../lib/constants';
 
@@ -45,7 +44,6 @@
 	];
 </script>
 
-<TopSeparator />
 <Section>
 	<Header type="h1">Support us</Header>
 	<Paragraph>
@@ -59,11 +57,9 @@
 	<Paragraph isData
 		>IBAN: <ClipboardButton isDark copy={THRIVING_INDIVIDUALS_IBAN.replace(/\s+/g, '')}
 			>{THRIVING_INDIVIDUALS_IBAN}</ClipboardButton
-		></Paragraph
-	>
+		></Paragraph>
 	<Paragraph isData
-		>SWIFT/BIC: <ClipboardButton isDark copy="NESBPLPW">NESBPLPW</ClipboardButton> (Nest Bank)</Paragraph
-	>
+		>SWIFT/BIC: <ClipboardButton isDark copy="NESBPLPW">NESBPLPW</ClipboardButton> (Nest Bank)</Paragraph>
 </Section>
 
 {#if PUBLIC_PAYPAL_ADDRESS}

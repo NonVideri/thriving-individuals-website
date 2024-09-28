@@ -9,10 +9,8 @@
 		carried out by the Thriving Individuals Foundation (data controller) in the course of
 		maintaining regular contact with the organization in connection with its statutory activities,
 		in particular by sending free materials and informing about Thriving Individuals' actions and
-		opportunities to support the organization's activities.</Paragraph
-	>
+		opportunities to support the organization's activities.</Paragraph>
 	<Paragraph
 		>I consent to the processing of my personal data by the Thriving Individuals Foundation (data
-		controller) for marketing purposes and to send commercial information by electronic means.</Paragraph
-	>
+		controller) for marketing purposes and to send commercial information by electronic means.</Paragraph>
 </Announcement>
