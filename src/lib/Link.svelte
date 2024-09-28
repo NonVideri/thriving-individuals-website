@@ -19,7 +19,6 @@
 			? 'text-primary-400 hover:text-primary-600'
 			: 'text-secondary-500 hover:text-secondary-700',
 		className
-	)}
->
+	)}>
 	<slot />
 </a>

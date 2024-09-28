@@ -14,5 +14,4 @@
 	{name}
 	{placeholder}
 	{required}
-	class="px-6 py-4 text-lg border-none rounded-md outline-none focus:shadow-focus"
-/>
+	class="px-6 py-4 text-lg border-none rounded-md outline-none focus:shadow-focus" />

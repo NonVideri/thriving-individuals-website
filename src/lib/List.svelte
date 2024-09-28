@@ -13,4 +13,5 @@
 	{#each items as item}
 		<ListItem {...item} />
 	{/each}
+	<slot />
 </ol>
