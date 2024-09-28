@@ -48,8 +48,7 @@
 	)}
 	bind:this={dialog}
 	aria-labelledby="dialog-title"
-	aria-modal="true"
->
+	aria-modal="true">
 	<button on:click={closeDialog} aria-label="Close alert">
 		<Paragraph id="dialog-title" type="small">
 			{$alert?.message}
