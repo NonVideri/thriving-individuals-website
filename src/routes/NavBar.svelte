@@ -4,7 +4,7 @@
 	import NavBarDropdown from './NavBarDropdown.svelte';
 	import NavBarDropdownLink from './NavBarDropdownLink.svelte';
 	import { PUBLIC_FORUM_URL } from '$env/static/public';
-	import { Routes } from '$lib/constants';
+	import { PROJECTS, Routes } from '$lib/constants';
 
 	let lastScroll = 0;
 	let showMenu = true;
@@ -26,17 +26,23 @@
 
 <nav
 	class="z-10 fixed top-0 left-0 right-0 bg-surface-800 flex justify-around transition-transform duration-200 ease-in-out {!showMenu &&
-		'transform -translate-y-full'}"
->
+		'transform -translate-y-full'}">
 	<NavBarLink href={Routes.HOME} text="About us">
 		<NavBarDropdown>
 			<!-- <NavBarDropdownLink href={Routes.FRAMEWORK} text="Practical Freedom Framework" /> -->
 			<NavBarDropdownLink href={Routes.TEAM} text="Our team" />
 			<NavBarDropdownLink href={Routes.STATUTE} text="Statute" />
-			<NavBarDropdownLink href={Routes.LEGAL} text="Legal information" />
+			<NavBarDropdownLink href={Routes.CONTACT} text="Contact us" />
 		</NavBarDropdown>
 	</NavBarLink>
-	<NavBarLink href={PUBLIC_FORUM_URL} text="Join us">
+	<NavBarLink href={Routes.PROJECTS} text="Our projects">
+		<NavBarDropdown>
+			{#each PROJECTS as { href, text }}
+				<NavBarDropdownLink {href} {text} />
+			{/each}
+		</NavBarDropdown>
+	</NavBarLink>
+	<NavBarLink href={PUBLIC_FORUM_URL} text="Join us" target="_blank">
 		<NavBarDropdown>
 			<NavBarDropdownLink href={Routes.JOIN} text="Join our newsletter" />
 		</NavBarDropdown>

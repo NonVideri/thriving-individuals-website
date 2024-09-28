@@ -19,6 +19,7 @@
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@types/node": "^20.12.7",
+		"@types/nodemailer": "^6.4.16",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
 		"autoprefixer": "^10.4.16",
@@ -45,6 +46,7 @@
 	"dependencies": {
 		"@fortawesome/free-regular-svg-icons": "^6.6.0",
 		"@fortawesome/free-solid-svg-icons": "^6.6.0",
+		"nodemailer": "^6.9.15",
 		"pocketbase": "^0.21.1"
 	}
 }

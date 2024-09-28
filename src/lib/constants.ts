@@ -9,7 +9,6 @@ export const Routes = {
 	FRAMEWORK: '/framework',
 	HOME: '/',
 	JOIN: '/join',
-	LEGAL: '/legal',
 	PARTNERSHIPS: '/partnerships',
 	PROJECTS: '/projects',
 	PROJECTS_DEEP_TALKS: '/projects/deep-talks',
